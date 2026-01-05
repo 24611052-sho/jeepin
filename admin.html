@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Admin Dashboard - Jeepin Jogja</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <style>
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+        --jeepin-gray: #f4f6f8;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--jeepin-gray);
+        color: #333;
+      }
+
+      /* --- LOGIN PAGE --- */
+      .login-wrapper {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("images/bg.jpg") no-repeat center center;
+        background-size: cover;
+        position: relative;
+      }
+      .login-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .card-login {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        background: #fff;
+        z-index: 2;
+      }
+      .login-logo {
+        width: 150px;
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      /* --- DASHBOARD --- */
+      .hidden {
+        display: none !important;
+      }
+
+      /* Navbar Admin */
+      .admin-navbar {
+        background-color: var(--jeepin-black);
+        padding: 15px 30px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* REVISI LOGO: Shadow Putih agar 'Plat Besi' terlihat di hitam */
+      .admin-brand img {
+        height: 45px;
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+      }
+
+      .admin-user span {
+        font-weight: 600;
+        margin-right: 15px;
+      }
+      .btn-logout {
+        background: #333;
+        color: #fff;
+        border: 1px solid #555;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        transition: 0.3s;
+      }
+      .btn-logout:hover {
+        background: #d9534f;
+        border-color: #d9534f;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* Content */
+      .dashboard-content {
+        padding: 30px;
+      }
+      .page-title {
+        font-weight: 700;
+        color: var(--jeepin-black);
+        margin-bottom: 5px;
+      }
+      .page-subtitle {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+      /* Cards */
+      .stat-card {
+        background: #fff;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+      .card-header-custom {
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-title-custom {
+        font-weight: 700;
+        margin: 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Table */
+      .table-responsive {
+        max-height: 500px;
+        overflow-y: auto;
+      }
+      .table-custom th {
+        background: #f8f9fa;
+        color: #555;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        border-top: none;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .table-custom td {
+        vertical-align: middle;
+        font-size: 13px;
+        color: #444;
+      }
+
+      /* Badges & Buttons */
+      .badge-id {
+        font-family: monospace;
+        font-size: 12px;
+        background: #eee;
+        padding: 4px 8px;
+        border-radius: 4px;
+        color: #333;
+        font-weight: 700;
+      }
+      .badge-paket {
+        background: var(--jeepin-black);
+        color: #fff;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+
+      /* FITUR BARU: BADGE JENIS PEMBAYARAN */
+      .badge-payment-dp {
+        background: #fff3cd;
+        color: #856404;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        border: 1px solid #ffeeba;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      .badge-payment-lunas {
+        background: #d1e7dd;
+        color: #0f5132;
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        border: 1px solid #badbcc;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+
+      .btn-action {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 6px;
+      }
+      .btn-verify {
+        background: #ffc107;
+        color: #000;
+        border: none;
+      }
+      .btn-verify:hover {
+        background: #e0a800;
+      }
+      .btn-lunas {
+        background: #28a745;
+        color: #fff;
+        border: none;
+      }
+      .btn-lunas:hover {
+        background: #218838;
+      }
+
+      .btn-wa-link {
+        color: #25d366;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn-wa-link:hover {
+        text-decoration: underline;
+        color: #128c7e;
+      }
+
+      /* Inputs */
+      .form-control-custom {
+        border-radius: 8px;
+        border: 2px solid #eee;
+        height: 45px;
+        padding: 0 15px;
+      }
+      .form-control-custom:focus {
+        border-color: var(--jeepin-black);
+        box-shadow: none;
+      }
+      .search-box {
+        position: relative;
+        max-width: 300px;
+      }
+      .search-box input {
+        padding-left: 35px;
+        height: 35px;
+        border-radius: 20px;
+        font-size: 13px;
+      }
+      .search-box i {
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        font-size: 12px;
+        color: #aaa;
+      }
+
+      /* Footer */
+      .admin-footer {
+        text-align: center;
+        padding: 20px;
+        color: #999;
+        font-size: 12px;
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-wrapper" id="loginSection">
+      <div class="login-overlay"></div>
+      <div class="card card-login">
+        <img src="images/logo.png" alt="Jeepin Jogja" class="login-logo" />
+        <h4 class="text-center font-weight-bold mb-4">Admin Portal</h4>
+
+        <div class="form-group">
+          <label class="small font-weight-bold">Username</label>
+          <input type="text" id="adminName" class="form-control form-control-custom" placeholder="Nama Anda" required />
+        </div>
+        <div class="form-group">
+          <label class="small font-weight-bold">Password</label>
+          <input type="password" id="adminPass" class="form-control form-control-custom" placeholder="••••••" required />
+        </div>
+
+        <button onclick="loginAdmin()" class="btn btn-dark btn-block py-3 mt-4 font-weight-bold" style="background: #1a1a1a; border-radius: 8px">MASUK DASHBOARD</button>
+      </div>
+    </div>
+
+    <div id="dashboardSection" class="hidden">
+      <nav class="admin-navbar">
+        <div class="admin-brand">
+          <img src="images/logo.png" alt="Jeepin Admin" />
+        </div>
+        <div class="admin-user">
+          <span id="displayAdminName">Admin</span>
+          <a href="#" onclick="logout()" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </nav>
+
+      <div class="dashboard-content container-fluid">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <div>
+            <h2 class="page-title">Dashboard Operasional</h2>
+            <p class="page-subtitle mb-0">Kelola pesanan masuk dan verifikasi pembayaran.</p>
+          </div>
+          <button onclick="refreshAll()" class="btn btn-dark btn-sm shadow-sm"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="stat-card">
+              <div class="card-header-custom">
+                <h5 class="card-title-custom text-warning"><i class="fas fa-file-invoice-dollar"></i> Konfirmasi Masuk</h5>
+                <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="searchDP" class="form-control" placeholder="Cari ID / Nama..." onkeyup="searchTable('searchDP', 'tableDP')" />
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover table-custom mb-0">
+                  <thead>
+                    <tr>
+                      <th>Detail Pesanan</th>
+                      <th>Jenis & Bukti</th>
+                      <th width="100">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableDP"></tbody>
+                </table>
+                <div id="msgDP" class="text-center p-4 text-muted small">Memuat data...</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="stat-card">
+              <div class="card-header-custom">
+                <h5 class="card-title-custom text-success"><i class="fas fa-check-circle"></i> Pesanan Aktif (Sudah DP)</h5>
+                <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="searchLunas" class="form-control" placeholder="Cari ID / Nama..." onkeyup="searchTable('searchLunas', 'tableLunas')" />
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover table-custom mb-0">
+                  <thead>
+                    <tr>
+                      <th>Detail Pesanan</th>
+                      <th>Kontak Tamu</th>
+                      <th width="100">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableLunas"></tbody>
+                </table>
+                <div id="msgLunas" class="text-center p-4 text-muted small">Memuat data...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="admin-footer">&copy; 2026 Jeepin Jogja Internal System. Dilarang menyebarkan data privasi pelanggan.</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // CONFIGURATION
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwrDtrSdnJxEDvUjYT0wBUVQcQAtg22ECEY1KCM-nO2ecG2yu2Lp_LN5DUgGDdHpmqb/exec";
+
+      let currentPassword = "";
+      let currentAdminName = "";
+
+      // 1. LOGIN LOGIC
+      function loginAdmin() {
+        const name = $("#adminName").val();
+        const pass = $("#adminPass").val();
+
+        if (!name || !pass) return alert("Harap isi username dan password!");
+
+        // Simpan sesi lokal (Sederhana)
+        currentAdminName = name;
+        currentPassword = pass;
+
+        $("#displayAdminName").text("Halo, " + name);
+        $("#loginSection").fadeOut(300, function () {
+          $("#dashboardSection").removeClass("hidden").fadeIn(300);
+          refreshAll();
+        });
+      }
+
+      function logout() {
+        if (confirm("Keluar dari dashboard?")) {
+          location.reload();
+        }
+      }
+
+      // 2. LOAD DATA
+      function refreshAll() {
+        loadData("admin_get_pending", "#tableDP", "#msgDP", "typeDP");
+        loadData("admin_get_confirm", "#tableLunas", "#msgLunas", "typeLunas");
+      }
+
+      function loadData(action, tableId, msgId, type) {
+        $(tableId).empty();
+        $(msgId).html('<i class="fas fa-spinner fa-spin"></i> Mengambil data...').show();
+
+        const payload = { action: action, password: currentPassword };
+
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            $(msgId).hide();
+
+            if (res.status === "ERROR") {
+              if (res.pesan.includes("Password")) {
+                alert("Login Gagal: Password Salah!");
+                logout();
+              } else {
+                $(msgId)
+                  .text("Error: " + res.pesan)
+                  .show();
+              }
+              return;
+            }
+
+            if (!res.data || res.data.length === 0) {
+              $(msgId).text("Tidak ada data pesanan.").show();
+              return;
+            }
+
+            renderTable(res.data, tableId, type);
+          })
+          .catch((err) => {
+            console.error(err);
+            $(msgId).text("Gagal koneksi ke server.").show();
+          });
+      }
+
+      // 3. RENDER TABLE (DENGAN LOGIKA JENIS PEMBAYARAN)
+      function renderTable(data, tableId, type) {
+        data.forEach((item) => {
+          let rowHtml = "";
+
+          // Bersihkan No HP
+          let hp = item.no_hp.toString().replace(/\D/g, "");
+          if (hp.startsWith("0")) hp = "62" + hp.substring(1);
+          const waLink = `https://wa.me/${hp}`;
+
+          if (type === "typeDP") {
+            // LOGIKA TOMBOL BUKTI
+            let btnBukti = "";
+            if (item.url_bukti && item.url_bukti.includes("http")) {
+              btnBukti = `<a href="${item.url_bukti}" target="_blank" class="btn btn-info btn-action btn-sm">
+                                  <i class="fas fa-eye"></i> Lihat Bukti
+                                </a>`;
+            } else {
+              btnBukti = `<span class="text-danger small"><i class="fas fa-times"></i> Belum Upload</span><br>
+                                <a href="${waLink}" target="_blank" class="small text-muted">Tagih via WA</a>`;
+            }
+
+            // FITUR BARU: LABEL JENIS PEMBAYARAN
+            let labelBayar = "";
+            if (item.jenis_bayar === "LUNAS") {
+              labelBayar = `<span class="badge-payment-lunas"><i class="fas fa-check-double"></i> PELUNASAN</span>`;
+            } else {
+              labelBayar = `<span class="badge-payment-dp"><i class="fas fa-hourglass-half"></i> UANG MUKA (DP)</span>`;
+            }
+
+            rowHtml = `
+                    <tr>
+                        <td>
+                            <span class="badge-id">${item.id_booking}</span> <span class="badge-paket">${item.kode_paket}</span><br>
+                            <strong>${item.nama}</strong><br>
+                            <small class="text-muted"><i class="far fa-calendar"></i> ${item.tanggal_guna}</small>
+                        </td>
+                        <td>
+                            ${labelBayar}<br>
+                            <div style="font-size:11px; margin-top:2px;">Kode: <b>${item.kode_konfirmasi}</b></div>
+                            ${btnBukti}
+                        </td>
+                        <td>
+                            <button class="btn btn-verify btn-action shadow-sm" 
+                                onclick="prosesAction('admin_konfirmasi_dp', '${item.id_booking}', '${item.kode_konfirmasi}')">
+                                <i class="fas fa-check"></i> Verifikasi
+                            </button>
+                        </td>
+                    </tr>
+                `;
+          } else {
+            // TABEL LUNAS (Pesanan Aktif)
+            rowHtml = `
+                    <tr>
+                        <td>
+                            <span class="badge-id">${item.id_booking}</span><br>
+                            <strong>${item.nama}</strong><br>
+                            <small class="text-muted">Tgl Guna: ${item.tanggal_guna}</small>
+                        </td>
+                        <td>
+                            <a href="${waLink}" target="_blank" class="btn-wa-link">
+                                <i class="fab fa-whatsapp"></i> Chat Tamu
+                            </a><br>
+                            <small class="text-muted">${item.no_hp}</small>
+                        </td>
+                        <td>
+                            <button class="btn btn-lunas btn-action shadow-sm" 
+                                onclick="prosesAction('admin_konfirmasi_lunas', '${item.id_booking}', '-')">
+                                <i class="fas fa-money-bill-wave"></i> Set LUNAS
+                            </button>
+                        </td>
+                    </tr>
+                `;
+          }
+          $(tableId).append(rowHtml);
+        });
+      }
+
+      // 4. PROSES AKSI
+      function prosesAction(action, id, kode) {
+        let confirmMsg = action === "admin_konfirmasi_dp" ? `Konfirmasi pembayaran untuk Booking ${id}?` : `Tandai Booking ${id} sebagai LUNAS SEPENUHNYA?`;
+
+        if (!confirm(confirmMsg)) return;
+
+        const btn = event.target;
+        const oldHtml = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i>';
+        btn.disabled = true;
+
+        const payload = {
+          action: action,
+          password: currentPassword,
+          id_booking: id,
+          kode_konfirmasi: kode,
+          nama_admin: currentAdminName,
+        };
+
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          body: JSON.stringify(payload),
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            if (res.status === "SUKSES") {
+              refreshAll();
+            } else {
+              alert("Gagal: " + res.pesan);
+              btn.innerHTML = oldHtml;
+              btn.disabled = false;
+            }
+          })
+          .catch((err) => {
+            alert("Terjadi kesalahan koneksi.");
+            btn.innerHTML = oldHtml;
+            btn.disabled = false;
+          });
+      }
+
+      // 5. FITUR PENCARIAN
+      function searchTable(inputId, tableId) {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById(inputId);
+        filter = input.value.toUpperCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

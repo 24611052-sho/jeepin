@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Jeepin Jogja - Premium Adventure</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* --- 1. GLOBAL STYLE & HEADER --- */
+
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+        --brand-font: "Poppins", sans-serif;
+      }
+
+      /* Override Link & Teks Utama */
+      a {
+        color: var(--jeepin-black) !important;
+      }
+      .text-primary {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Navbar Styling */
+      .ftco-navbar-light .navbar-nav > .nav-item.active > a {
+        color: var(--jeepin-black) !important;
+        font-weight: 700;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+        color: var(--jeepin-white) !important;
+      }
+      .ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* --- CSS BARU UNTUK DROPDOWN MENU --- */
+      .dropdown-menu {
+        background-color: var(--jeepin-black) !important;
+        border: none;
+        border-radius: 0 0 4px 4px;
+        margin-top: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 13px;
+        padding: 10px 20px;
+        font-family: var(--brand-font) !important;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .dropdown-item:hover {
+        background-color: #333 !important;
+        color: #fff !important;
+      }
+
+      /* Typography Override */
+      .subheading {
+        font-family: var(--brand-font) !important;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--jeepin-black) !important;
+        font-size: 13px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--brand-font) !important;
+        color: var(--jeepin-black);
+      }
+
+      /* Tombol */
+      .btn {
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background-color: var(--jeepin-black) !important;
+        border-color: var(--jeepin-black) !important;
+        color: #fff !important;
+        padding: 0.7rem 1.25rem !important;
+        box-shadow: 0 4px 10px rgba(26, 26, 26, 0.06);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        background-color: #0f0f0f !important;
+        box-shadow: 0 10px 22px rgba(26, 26, 26, 0.1);
+      }
+      .btn-secondary {
+        background-color: #fff !important;
+        color: var(--jeepin-black) !important;
+        border: 1px solid #fff !important;
+      }
+      .btn-secondary:hover {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+      }
+
+      /* Tombol Putih Transparan (Khusus Video di Hero) */
+      .btn-outline-white {
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: #ffffff !important;
+        background: transparent !important;
+        padding: 0.7rem 1.5rem;
+      }
+      .btn-outline-white:hover {
+        background: #ffffff !important;
+        color: var(--jeepin-black) !important;
+        border-color: #ffffff !important;
+        text-decoration: none;
+      }
+
+      /* Kode Penting Agar Ikon Flaticon Muncul */
+      .services .icon span,
+      .services .icon span:before,
+      [class^="flaticon-"]:before,
+      [class*=" flaticon-"]:before {
+        font-family: "Flaticon" !important;
+        speak: none;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        line-height: 1 !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+        display: inline-block !important;
+      }
+
+      /* --- 2. SPESIFIK HALAMAN INDEX --- */
+
+      /* Bagian Kotak "Mengapa Jeepin Jogja" */
+      .featured-top .row.no-gutters {
+        align-items: stretch;
+      }
+      .featured-top > .row.no-gutters > .col-md-4,
+      .featured-top > .row.no-gutters > .col-md-8 {
+        display: flex;
+      }
+
+      /* Card Dashboard Gelap */
+      .request-form {
+        background: #111111 !important;
+        color: #f0f0f0 !important;
+        padding: 2rem !important;
+        width: 100%;
+        border-radius: 8px 0 0 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid #222;
+      }
+
+      /* Header Dashboard */
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .dashboard-header .title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* Indikator LIVE (Titik Hijau Berdenyut) */
+      .live-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #00ff88;
+        background: rgba(0, 255, 136, 0.1);
+        padding: 4px 10px;
+        border-radius: 20px;
+      }
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #00ff88;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+        animation: pulse-green 2s infinite;
+      }
+      @keyframes pulse-green {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 6px rgba(0, 255, 136, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+        }
+      }
+
+      /* Info Items Layout */
+      .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .info-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .info-item .label-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .info-item .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 18px;
+      }
+      .info-item .label {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .info-item .value {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        text-align: right;
+      }
+
+      /* Warna status khusus */
+      .val-good {
+        color: #00ff88;
+      }
+      .val-sunny {
+        color: #ffd700;
+      }
+
+      /* Map Placeholder */
+      .map-preview {
+        height: 100px;
+        width: 100%;
+        border-radius: 8px;
+        background: #1a1a1a;
+        background-image: linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px);
+        background-size: 20px 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        margin-bottom: 15px;
+      }
+      .map-overlay-btn {
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-transform: uppercase;
+        transition: all 0.3s;
+      }
+      .map-preview:hover .map-overlay-btn {
+        background: #fff;
+        color: #000;
+        cursor: pointer;
+      }
+      .map-pin {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        color: #ff4444;
+        font-size: 24px;
+      }
+
+      /* Footer dashboard text */
+      .dashboard-footer {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        margin-top: 5px;
+        font-style: italic;
+      }
+
+      .services-wrap {
+        background: #ffffff;
+        padding: 2rem;
+        width: 100%;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      }
+      @media (max-width: 768px) {
+        .request-form {
+          border-radius: 8px 8px 0 0;
+        }
+        .services-wrap {
+          border-radius: 0 0 8px 8px;
+        }
+      }
+
+      /* Styling Ikon Layanan */
+      .services .icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 12px auto;
+      }
+      .services .icon span {
+        font-size: 32px !important;
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Footer & Logo */
+      .navbar-brand img {
+        max-height: 60px;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+      }
+      .ftco-footer .logo img {
+        max-height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+      .ftco-footer {
+        background-color: #000 !important;
+        color: #d0d0d0 !important;
+      }
+      .ftco-footer h2 {
+        color: #fff !important;
+      }
+      .ftco-footer a {
+        color: #cfcfcf !important;
+      }
+
+      /* Hero Text Index (Judul Besar) */
+      .hero-wrap h1 {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      /* Navigasi Minimal */
+      .minimal-nav {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 13px;
+        color: #6b6b6b;
+      }
+      .minimal-nav a.selengkapnya {
+        font-weight: 600;
+        color: var(--jeepin-black);
+      }
+      .minimal-nav a.selengkapnya::after {
+        content: "→";
+        margin-left: 8px;
+        display: inline-block;
+        transition: transform 0.12s ease;
+      }
+      .minimal-nav a.selengkapnya:hover::after {
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Jeepin Jogja" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="oi oi-menu"></span> Menu</button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="index.html" class="nav-link">BERANDA</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">TENTANG</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">LAYANAN</a></li>
+            <li class="nav-item"><a href="catalog.html" class="nav-link">KATALOG</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> KONTAK </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="contact.html">Hubungi Kami</a>
+                <a class="dropdown-item" href="confirmation.html">Konfirmasi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('images/bg.jpg')" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
+          <div class="col-lg-8 ftco-animate">
+            <div class="text w-100 text-center mb-md-5 pb-md-5">
+              <h1 class="mb-4">The Art of Adventure</h1>
+              <p style="font-size: 18px">Nikmati pengalaman offroad premium di Yogyakarta dengan armada Jeep klasik dan ATV bertenaga tinggi.</p>
+
+              <div class="mt-4 d-flex justify-content-center">
+                <a href="https://www.youtube.com/watch?v=MITI-kRlR1w" class="btn btn-outline-white popup-video-custom d-flex align-items-center"> <span class="ion-ios-play mr-2"></span> Tonton Video </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section ftco-no-pt bg-light">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-12 featured-top">
+            <div class="row no-gutters">
+              <div class="col-md-4 d-flex align-items-center">
+                <div class="request-form ftco-animate">
+                  <div class="dashboard-header">
+                    <div class="title">Live Update</div>
+                    <div class="live-indicator">
+                      <div class="pulse-dot"></div>
+                      ONLINE
+                    </div>
+                  </div>
+
+                  <div class="info-grid">
+                    <div class="info-item">
+                      <div class="label-group">
+                        <div class="icon"><span class="ion-ios-sunny"></span></div>
+                        <div class="label">Cuaca</div>
+                      </div>
+                      <div class="value val-sunny">Cerah</div>
+                    </div>
+
+                    <div class="info-item">
+                      <div class="label-group">
+                        <div class="icon"><span class="flaticon-route"></span></div>
+                        <div class="label">Kondisi Trek</div>
+                      </div>
+                      <div class="value val-good">Kering & Aman</div>
+                    </div>
+
+                    <div class="info-item">
+                      <div class="label-group">
+                        <div class="icon"><span class="ion-ios-checkmark-circle-outline"></span></div>
+                        <div class="label">Wisata</div>
+                      </div>
+                      <div class="value">Buka Normal</div>
+                    </div>
+                  </div>
+
+                  <div class="map-preview">
+                    <span class="map-pin ion-ios-pin"></span>
+                    <a href="https://maps.google.com" target="_blank" class="map-overlay-btn">Buka Peta</a>
+                  </div>
+
+                  <div class="dashboard-footer">Data diperbarui otomatis dari Basecamp Kaliurang</div>
+                </div>
+              </div>
+
+              <div class="col-md-8 d-flex align-items-center">
+                <div class="services-wrap rounded-right w-100">
+                  <h3 class="heading-section mb-4">Mengapa Jeepin Jogja?</h3>
+                  <div class="row d-flex mb-4">
+                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                      <div class="services w-100 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
+                        <div class="text w-100">
+                          <h3 class="heading mb-2">Rute Privat</h3>
+                          <p class="small">Menjauh dari keramaian turis.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                      <div class="services w-100 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-handshake"></span></div>
+                        <div class="text w-100">
+                          <h3 class="heading mb-2">Harga Pasti</h3>
+                          <p class="small">Tanpa biaya tersembunyi.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                      <div class="services w-100 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car"></span></div>
+                        <div class="text w-100">
+                          <h3 class="heading mb-2">Unit Premium</h3>
+                          <p class="small">Armada bersih & terawat.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p><a href="catalog.html" class="btn btn-primary py-3 px-4">Lihat Katalog Lengkap</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+            <span class="subheading">Koleksi Kami</span>
+            <h2 class="mb-2">Armada Unggulan</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="carousel-car owl-carousel">
+              <div class="item">
+                <div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg)">
+                    <span
+                      class="category-badge"
+                      style="position: absolute; top: 15px; left: 15px; background: rgba(26, 26, 26, 0.9); color: #fff; padding: 4px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; border-radius: 4px"
+                      >Sewa Jeep</span
+                    >
+                  </div>
+                  <div class="text">
+                    <h2 class="mb-0"><a href="detail.html?id=JE01">Jeep Adventure (Driver)</a></h2>
+                    <div class="d-flex mb-3">
+                      <span class="cat text-muted small">Jeep Adventure</span>
+                      <p class="price ml-auto font-weight-bold" style="color: #1a1a1a">Rp 800K</p>
+                    </div>
+                    <div class="specs-grid mb-3" style="display: flex; background: #f8f9fa; border-radius: 6px; padding: 8px 12px; font-size: 11px; gap: 10px">
+                      <div class="specs-item"><i class="ion-ios-time"></i> 3 Jam</div>
+                      <div class="specs-item"><i class="ion-ios-alarm"></i> 07:00-16:00</div>
+                    </div>
+                    <p class="d-flex mb-0 d-block">
+                      <a href="booking.html?id=JE01" class="btn btn-primary py-2 mr-1" style="flex: 1">Booking</a>
+                      <a href="detail.html?id=JE01" class="btn btn-secondary py-2 ml-1" style="flex: 1; border: 1px solid #d0d0d0 !important">Detail</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-3.jpg)">
+                    <span
+                      class="category-badge"
+                      style="position: absolute; top: 15px; left: 15px; background: rgba(26, 26, 26, 0.9); color: #fff; padding: 4px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; border-radius: 4px"
+                      >ATV</span
+                    >
+                  </div>
+                  <div class="text">
+                    <h2 class="mb-0"><a href="detail.html?id=AT01">ATV Quad Bike (Single)</a></h2>
+                    <div class="d-flex mb-3">
+                      <span class="cat text-muted small">Single Rider</span>
+                      <p class="price ml-auto font-weight-bold" style="color: #1a1a1a">Rp 350K</p>
+                    </div>
+                    <div class="specs-grid mb-3" style="display: flex; background: #f8f9fa; border-radius: 6px; padding: 8px 12px; font-size: 11px; gap: 10px">
+                      <div class="specs-item"><i class="ion-ios-time"></i> 1 Jam</div>
+                      <div class="specs-item"><i class="ion-ios-alarm"></i> 08:00-17:00</div>
+                    </div>
+                    <p class="d-flex mb-0 d-block">
+                      <a href="booking.html?id=AT01" class="btn btn-primary py-2 mr-1" style="flex: 1">Booking</a>
+                      <a href="detail.html?id=AT01" class="btn btn-secondary py-2 ml-1" style="flex: 1; border: 1px solid #d0d0d0 !important">Detail</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="car-wrap rounded ftco-animate">
+                  <div class="img rounded d-flex align-items-end" style="background-image: url(images/car-6.jpg)">
+                    <span
+                      class="category-badge"
+                      style="position: absolute; top: 15px; left: 15px; background: rgba(26, 26, 26, 0.9); color: #fff; padding: 4px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; border-radius: 4px"
+                      >Wisata</span
+                    >
+                  </div>
+                  <div class="text">
+                    <h2 class="mb-0"><a href="detail.html?id=PW01">Sunrise Merapi Luxury</a></h2>
+                    <div class="d-flex mb-3">
+                      <span class="cat text-muted small">Private Trip</span>
+                      <p class="price ml-auto font-weight-bold" style="color: #1a1a1a">Rp 1.2jt</p>
+                    </div>
+                    <div class="specs-grid mb-3" style="display: flex; background: #f8f9fa; border-radius: 6px; padding: 8px 12px; font-size: 11px; gap: 10px">
+                      <div class="specs-item"><i class="ion-ios-time"></i> 7 Jam</div>
+                      <div class="specs-item"><i class="ion-ios-alarm"></i> 04:00 Start</div>
+                    </div>
+                    <p class="d-flex mb-0 d-block">
+                      <a href="booking.html?id=PW01" class="btn btn-primary py-2 mr-1" style="flex: 1">Booking</a>
+                      <a href="detail.html?id=PW01" class="btn btn-secondary py-2 ml-1" style="flex: 1; border: 1px solid #d0d0d0 !important">Detail</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <nav class="minimal-nav" aria-label="Selengkapnya Koleksi" style="text-align: center; margin-top: 20px">
+                <a href="catalog.html" class="selengkapnya" style="font-weight: 600; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px">Selengkapnya</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ftco-section ftco-about">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg)"></div>
+          <div class="col-md-6 wrap-about ftco-animate">
+            <div class="heading-section heading-section-white pl-md-5">
+              <span class="subheading">Tentang Kami</span>
+              <h2 class="mb-4"><img src="images/logo.png" alt="Jeepin Jogja" class="about-brand" style="max-height: 90px" /></h2>
+              <p>Kami hadir untuk mengubah cara Anda menikmati wisata offroad di Yogyakarta. Fokus kami bukan hanya pada adrenalin, tapi juga kenyamanan, keamanan, dan estetika perjalanan.</p>
+              <p>Armada kami dirawat dengan standar tinggi, memastikan performa maksimal di medan berat sekaligus tampil prima untuk kebutuhan dokumentasi liburan Anda.</p>
+              <p><a href="catalog.html" class="btn btn-primary py-3 px-4">Lihat Koleksi</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Layanan</span>
+            <h2 class="mb-3">Kategori Layanan</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="services services-2 w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-suv" style="color: #ffffff !important; font-size: 38px"></span>
+              </div>
+              <div class="text w-100">
+                <h3 class="heading mb-2">Sewa Jeep</h3>
+                <p>Armada klasik terawat untuk Lava Tour dan pedesaan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services services-2 w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-pistons" style="color: #ffffff !important; font-size: 38px"></span>
+              </div>
+              <div class="text w-100">
+                <h3 class="heading mb-2">ATV Adventure</h3>
+                <p>Trek menantang dengan unit bertenaga tinggi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services services-2 w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-route" style="color: #ffffff !important; font-size: 38px"></span>
+              </div>
+              <div class="text w-100">
+                <h3 class="heading mb-2">Paket Wisata</h3>
+                <p>Itinerary lengkap, Anda tinggal menikmati perjalanan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services services-2 w-100 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="flaticon-wedding-car" style="color: #ffffff !important; font-size: 38px"></span>
+              </div>
+              <div class="text w-100">
+                <h3 class="heading mb-2">Prewedding</h3>
+                <p>Properti foto gagah dengan latar alam Yogyakarta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-12 text-center">
+            <nav class="minimal-nav" aria-label="Selengkapnya Layanan">
+              <a href="services.html" class="selengkapnya" style="font-weight: 600; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px">Selengkapnya</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Testimonial</span>
+            <h2 class="mb-3">Kata Mereka</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"Pengalaman luar biasa! Jeepnya bersih dan drivernya sangat ramah serta jago foto."</p>
+                    <p class="name">Sarah Wijaya</p>
+                    <span class="position">Traveler Jakarta</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_2.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"ATV track-nya seru banget. Safety gear lengkap dan bersih. Recommended!"</p>
+                    <p class="name">Budi Santoso</p>
+                    <span class="position">Mahasiswa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"Bookingnya gampang, admin fast respon. Trip sunrise-nya magis banget."</p>
+                    <p class="name">Amanda R.</p>
+                    <span class="position">Fotografer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">Blog</span>
+            <h2>Artikel Terbaru</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="#" class="block-20" style="background-image: url('images/image_1.jpg')"></a>
+              <div class="text pt-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Jan 20, 2026</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">Tips Aman Offroad untuk Pemula</a></h3>
+                <p>Persiapan fisik dan mental sebelum memacu adrenalin di lereng Merapi.</p>
+                <p><a href="#" class="btn btn-primary">Baca Selengkapnya</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="#" class="block-20" style="background-image: url('images/image_2.jpg')"></a>
+              <div class="text pt-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Jan 18, 2026</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">5 Spot Foto Terbaik di Rute Jeep</a></h3>
+                <p>Tempat-tempat instagramable yang wajib Anda singgahi saat trip.</p>
+                <p><a href="#" class="btn btn-primary">Baca Selengkapnya</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry">
+              <a href="#" class="block-20" style="background-image: url('images/image_3.jpg')"></a>
+              <div class="text pt-4">
+                <div class="meta mb-3">
+                  <div><a href="#">Jan 15, 2026</a></div>
+                  <div><a href="#">Admin</a></div>
+                </div>
+                <h3 class="heading mt-2"><a href="#">Kenapa Memilih ATV Tandem?</a></h3>
+                <p>Keseruan berdua menaklukkan trek lumpur dan sungai.</p>
+                <p><a href="#" class="btn btn-primary">Baca Selengkapnya</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-counter ftco-section img bg-light" id="section-counter">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="5">0</strong>
+                <span>Tahun <br />Pengalaman</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="50">0</strong>
+                <span>Unit <br />Kendaraan</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="2500">0</strong>
+                <span>Pelanggan <br />Puas</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text d-flex align-items-center">
+                <strong class="number" data-number="3">0</strong>
+                <span>Lokasi <br />Basecamp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="Jeepin Jogja" class="footer-logo" />
+                </a>
+              </h2>
+              <p>Partner petualangan profesional di Yogyakarta. Memberikan pengalaman tak terlupakan dengan standar pelayanan terbaik.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Informasi</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">Tentang Kami</a></li>
+                <li><a href="services.html" class="py-2 d-block">Layanan</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Syarat & Ketentuan</a></li>
+                <li><a href="contact.html" class="py-2 d-block">Kontak</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Bantuan</h2>
+              <ul class="list-unstyled">
+                <li><a href="guide.html" class="py-2 d-block">FAQ</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Cara Booking</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Metode Pembayaran</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kebijakan Privasi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Alamat</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Kaliurang, Sleman, Yogyakarta</span></li>
+                  <li>
+                    <a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 3456 7890</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon icon-envelope"></span><span class="text">info@jeepin.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Jeepin Jogja. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1a1a1a" />
+      </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".popup-video-custom").magnificPopup({
+          type: "iframe",
+          mainClass: "mfp-fade",
+          removalDelay: 160,
+          preloader: false,
+          fixedContentPos: false,
+          iframe: {
+            patterns: {
+              youtube: {
+                index: "youtube.com/",
+                id: "v=",
+                src: "https://www.youtube.com/embed/%id%?autoplay=1",
+              },
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

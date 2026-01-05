@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Konfirmasi Pembayaran - Jeepin Jogja</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* --- GLOBAL STYLE --- */
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+      }
+      a {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Navbar */
+      .ftco-navbar-light .navbar-nav > .nav-item.active > a {
+        color: var(--jeepin-black) !important;
+        font-weight: 700;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+        color: var(--jeepin-white) !important;
+      }
+      .ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Dropdown Menu */
+      .dropdown-menu {
+        background-color: var(--jeepin-black) !important;
+        border: none;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 13px;
+        padding: 10px 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .dropdown-item:hover {
+        background-color: #333 !important;
+        color: #fff !important;
+      }
+
+      /* Footer */
+      .ftco-footer {
+        background-color: #000 !important;
+        color: #d0d0d0 !important;
+      }
+      .ftco-footer h2 {
+        color: #fff !important;
+      }
+      .ftco-footer a {
+        color: #cfcfcf !important;
+      }
+      .navbar-brand img,
+      .ftco-footer .logo img {
+        max-height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+
+      /* --- CONFIRMATION PAGE SPECIFIC --- */
+
+      /* Breadcrumbs - FIX WARNA PUTIH */
+      .hero-wrap .breadcrumbs {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #fff !important;
+      }
+      .hero-wrap .breadcrumbs span {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .hero-wrap .breadcrumbs span a {
+        color: #fff !important;
+        text-decoration: none;
+      }
+      .hero-wrap h1 {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      /* Form Container */
+      .confirm-box {
+        background: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eee;
+      }
+
+      /* Labels & Inputs */
+      .form-group label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #999;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .form-control {
+        height: 50px !important;
+        border: 2px solid #f0f0f0;
+        border-radius: 8px;
+        color: #333;
+        font-weight: 500;
+      }
+      .form-control:focus {
+        border-color: var(--jeepin-black);
+        box-shadow: none;
+      }
+
+      /* Upload Area */
+      .upload-area {
+        width: 100%;
+        min-height: 200px;
+        border: 2px dashed #ddd;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fdfdfd;
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .upload-area:hover {
+        border-color: var(--jeepin-black);
+        background: #fff;
+      }
+      .upload-placeholder {
+        text-align: center;
+        color: #aaa;
+        transition: all 0.3s;
+      }
+      .upload-placeholder i {
+        font-size: 40px;
+        margin-bottom: 10px;
+        display: block;
+        color: #ccc;
+      }
+      .upload-preview {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        display: none;
+        background: #fff;
+      }
+
+      /* Bank Info Sidebar */
+      .bank-info-box {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+      }
+      .bank-item {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .bank-icon {
+        width: 50px;
+        height: 50px;
+        background: #f4f4f4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: #555;
+      }
+      .bank-details h5 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        color: #333;
+      }
+      .bank-details p {
+        font-size: 13px;
+        margin: 0;
+        color: #777;
+        font-family: monospace;
+        letter-spacing: 0.5px;
+      }
+
+      /* Button */
+      .btn-submit {
+        background-color: var(--jeepin-black);
+        color: #fff;
+        font-weight: 700;
+        padding: 15px;
+        width: 100%;
+        border-radius: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+        border: none;
+      }
+      .btn-submit:hover {
+        background-color: #333;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-submit:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Jeepin Jogja" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="oi oi-menu"></span> Menu</button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">BERANDA</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">TENTANG</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">LAYANAN</a></li>
+            <li class="nav-item"><a href="catalog.html" class="nav-link">KATALOG</a></li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KONTAK</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="contact.html">Hubungi Kami</a>
+                <a class="dropdown-item" href="confirmation.html">Konfirmasi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg.jpg')" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+            <p class="breadcrumbs">
+              <span class="mr-2"
+                ><a href="index.html">Beranda <i class="ion-ios-arrow-forward"></i></a
+              ></span>
+              <span class="mr-2"
+                ><a href="contact.html">Kontak <i class="ion-ios-arrow-forward"></i></a
+              ></span>
+              <span>Konfirmasi <i class="ion-ios-arrow-forward"></i></span>
+            </p>
+            <h1 class="mb-3 bread">Konfirmasi Pembayaran</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-7 mb-5">
+            <div class="confirm-box">
+              <h3 class="mb-4 font-weight-bold">Formulir Verifikasi</h3>
+
+              <form id="uploadForm">
+                <div class="form-group">
+                  <label>ID Booking</label>
+                  <input type="text" id="bookingId" class="form-control" placeholder="Contoh: JPN-2026-001" required />
+                  <small class="text-muted">Masukkan ID yang tertera di Invoice.</small>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Jenis Pembayaran</label>
+                      <select id="jenisBayar" class="form-control">
+                        <option value="DP">Uang Muka (DP 50%)</option>
+                        <option value="LUNAS">Pelunasan (100%)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nama Pengirim (Di Rekening)</label>
+                      <input type="text" id="namaPengirim" class="form-control" placeholder="A.n Siapa?" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group mt-3">
+                  <label>Bukti Transfer (Foto/Screenshot)</label>
+                  <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-placeholder" id="placeholder">
+                      <i class="ion-ios-cloud-upload"></i>
+                      <span>Klik untuk upload bukti</span><br />
+                      <small class="text-muted">(Max 2MB)</small>
+                    </div>
+                    <img id="preview" class="upload-preview" alt="Preview Bukti" />
+                  </div>
+                  <input type="file" id="fileInput" class="form-control-file" accept="image/*" style="display: none" required />
+                </div>
+
+                <div class="form-group mt-4">
+                  <button type="submit" class="btn btn-submit" id="btnSubmit">Kirim Konfirmasi</button>
+                </div>
+              </form>
+
+              <div id="statusMessage" class="mt-4"></div>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <div class="bank-info-box">
+              <h4 class="mb-4 font-weight-bold">Rekening Resmi</h4>
+              <p class="text-muted small mb-4">Silakan transfer hanya ke nomor rekening di bawah ini. Hati-hati terhadap penipuan.</p>
+
+              <div class="bank-item">
+                <div class="bank-icon text-primary">BCA</div>
+                <div class="bank-details">
+                  <h5>123-456-7890</h5>
+                  <p>a.n Jeepin Jogja</p>
+                </div>
+              </div>
+
+              <div class="bank-item">
+                <div class="bank-icon text-warning">MANDIRI</div>
+                <div class="bank-details">
+                  <h5>987-654-3210</h5>
+                  <p>a.n CV Petualang</p>
+                </div>
+              </div>
+
+              <div class="bank-item">
+                <div class="bank-icon text-success">GOPAY</div>
+                <div class="bank-details">
+                  <h5>0812-3456-7890</h5>
+                  <p>Jeepin Official</p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-4 border-top">
+                <h5 class="font-weight-bold mb-3">Butuh Bantuan?</h5>
+                <p class="text-muted small">Jika mengalami kendala upload atau lupa ID Booking, silakan hubungi admin.</p>
+                <a href="https://wa.me/6281234567890" class="btn btn-outline-dark btn-block py-3"> <span class="icon-whatsapp mr-2"></span> Chat Admin </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="Jeepin Jogja" class="footer-logo" />
+                </a>
+              </h2>
+              <p>Partner petualangan profesional di Yogyakarta. Memberikan pengalaman tak terlupakan dengan standar pelayanan terbaik.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Informasi</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">Tentang Kami</a></li>
+                <li><a href="services.html" class="py-2 d-block">Layanan</a></li>
+                <li><a href="catalog.html" class="py-2 d-block">Katalog</a></li>
+                <li><a href="contact.html" class="py-2 d-block">Kontak</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Bantuan</h2>
+              <ul class="list-unstyled">
+                <li><a href="guide.html" class="py-2 d-block">FAQ</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Cara Booking</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Metode Pembayaran</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kebijakan Privasi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Alamat</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Kaliurang, Sleman, Yogyakarta</span></li>
+                  <li>
+                    <a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 3456 7890</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon icon-envelope"></span><span class="text">info@jeepin.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Jeepin Jogja. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // GANTI URL SCRIPT GOOGLE APPS ANDA DISINI
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwrDtrSdnJxEDvUjYT0wBUVQcQAtg22ECEY1KCM-nO2ecG2yu2Lp_LN5DUgGDdHpmqb/exec";
+
+      $(document).ready(function () {
+        // 1. Auto-Fill ID Booking dari URL (jika ada)
+        const urlParams = new URLSearchParams(window.location.search);
+        const idFromUrl = urlParams.get("id"); // ?id=JPN-2026-XXX
+        if (idFromUrl) {
+          $("#bookingId").val(idFromUrl);
+        }
+      });
+
+      // 2. Logic Preview Gambar
+      $("#fileInput").change(function () {
+        const file = this.files[0];
+        if (file) {
+          // Validasi Ukuran (Max 2MB)
+          if (file.size > 2 * 1024 * 1024) {
+            alert("Ukuran file terlalu besar (Max 2MB). Silakan kompres atau screenshot ulang.");
+            this.value = "";
+            return;
+          }
+          // Tampilkan Preview
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            $("#preview").attr("src", e.target.result).show();
+            $("#placeholder").hide();
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // 3. Logic Submit ke Google Sheet
+      $("#uploadForm").submit(function (e) {
+        e.preventDefault();
+
+        const file = document.getElementById("fileInput").files[0];
+        if (!file) return alert("Mohon upload bukti transfer terlebih dahulu.");
+
+        const btn = $("#btnSubmit");
+        const originalText = btn.text();
+
+        // Ubah tombol jadi loading
+        btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm"></span> Mengirim Data...');
+        $("#statusMessage").html("");
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+          const rawBase64 = reader.result.split(",")[1]; // Ambil string base64 murni
+
+          const payload = {
+            action: "upload_bukti",
+            id_booking: $("#bookingId").val().trim(),
+            file_base64: rawBase64,
+            mime_type: file.type,
+            nama_file: file.name,
+            jenis_bayar: $("#jenisBayar").val(),
+            nama_pengirim: $("#namaPengirim").val(), // Data baru
+          };
+
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(payload),
+          })
+            .then((res) => res.json())
+            .then((response) => {
+              if (response.status === "SUKSES") {
+                // Tampilkan pesan sukses
+                $("#statusMessage").html(`
+                    <div class="alert alert-success text-center p-4" style="border-radius: 8px;">
+                        <i class="ion-ios-checkmark-circle" style="font-size: 40px; color: #28a745;"></i>
+                        <h5 class="mt-2 font-weight-bold">Konfirmasi Terkirim!</h5>
+                        <p class="mb-0">Admin kami akan segera memverifikasi pembayaran Anda.<br>Notifikasi akan dikirim via WhatsApp.</p>
+                    </div>
+                `);
+                $("#uploadForm")[0].reset();
+                $("#preview").hide();
+                $("#placeholder").show();
+                btn.hide(); // Sembunyikan tombol biar gak dobel klik
+              } else {
+                throw new Error(response.pesan);
+              }
+            })
+            .catch((err) => {
+              $("#statusMessage").html(`<div class="alert alert-danger">Gagal Mengirim: ${err.message}. Silakan coba lagi atau hubungi WA Admin.</div>`);
+              btn.prop("disabled", false).html(originalText);
+            });
+        };
+      });
+    </script>
+  </body>
+</html>

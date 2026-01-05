@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Invoice Pemesanan - Jeepin Jogja</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* --- GLOBAL STYLE --- */
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+      }
+      body {
+        background-color: #f0f2f5;
+        color: #333;
+        font-family: "Poppins", sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /* --- PERBAIKAN NAVBAR (SOLID BLACK) --- */
+      .ftco-navbar-light {
+        background: #1a1a1a !important; /* Latar Hitam Solid */
+        position: relative !important; /* Tidak Melayang/Absolute */
+        top: 0 !important;
+        padding: 15px 0;
+        box-shadow: none;
+      }
+
+      /* Warna Teks Menu Jadi Putih */
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link {
+        color: #ffffff !important;
+        font-weight: 700;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+        color: #ffffff !important;
+      }
+
+      /* Dropdown Menu */
+      .dropdown-menu {
+        background-color: #1a1a1a !important;
+        border: none;
+        margin-top: 10px;
+      }
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 13px;
+        padding: 10px 20px;
+      }
+      .dropdown-item:hover {
+        background-color: #333 !important;
+        color: #fff !important;
+      }
+
+      /* Footer */
+      .ftco-footer {
+        background-color: #000 !important;
+        color: #d0d0d0 !important;
+      }
+      .ftco-footer h2 {
+        color: #fff !important;
+      }
+      .ftco-footer a {
+        color: #cfcfcf !important;
+      }
+      .navbar-brand img,
+      .ftco-footer .logo img {
+        max-height: 60px;
+        width: auto;
+      }
+
+      /* --- INVOICE PAPER STYLE (A4 FRIENDLY) --- */
+      .invoice-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 60px;
+      }
+
+      .invoice-container {
+        width: 100%;
+        max-width: 750px;
+        background: #fff;
+        padding: 50px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e0e0e0;
+        position: relative;
+        background-color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+      }
+
+      /* Header Invoice */
+      .invoice-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 2px solid #1a1a1a;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+      }
+      .inv-logo img {
+        height: 70px;
+        margin-bottom: 10px;
+      }
+      .inv-company-info {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      .inv-title {
+        text-align: right;
+      }
+      .inv-title h1 {
+        font-weight: 800;
+        font-size: 36px;
+        color: #e0e0e0;
+        letter-spacing: 2px;
+        margin: 0;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .inv-status {
+        display: inline-block;
+        background: #fff3cd;
+        color: #856404;
+        font-weight: 700;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin-top: 5px;
+        border: 1px solid #ffeeba;
+      }
+
+      /* Tanggal & Waktu di Header */
+      .inv-date-time {
+        font-size: 12px;
+        color: #666;
+        margin-top: 8px;
+        font-weight: 500;
+      }
+
+      /* Info Grid */
+      .inv-info-grid {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .inv-box h5 {
+        font-size: 11px;
+        font-weight: 700;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .inv-box p {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+      }
+      .inv-box .sub-text {
+        font-size: 13px;
+        font-weight: 400;
+        color: #666;
+      }
+
+      /* ID Booking Highlight */
+      .id-highlight {
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        font-weight: 800;
+        color: #000;
+        background: #f4f4f4;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px dashed #bbb;
+        display: inline-block;
+      }
+      .btn-copy-icon {
+        cursor: pointer;
+        color: #555;
+        font-size: 16px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+      .btn-copy-icon:hover {
+        color: #000;
+      }
+
+      /* Table */
+      .table-custom {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+      .table-custom th {
+        background: #1a1a1a !important;
+        color: #fff !important;
+        padding: 12px 15px;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-align: left;
+        -webkit-print-color-adjust: exact;
+      }
+      .table-custom td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+        font-size: 14px;
+      }
+      .table-custom .pkg-name {
+        font-weight: 700;
+        color: #000;
+        font-size: 15px;
+      }
+      .table-custom .total-row td {
+        border-top: 2px solid #000;
+        border-bottom: none;
+        font-weight: 800;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* Payment Box */
+      .payment-box {
+        background: #fdfdfd;
+        border: 1px solid #eee;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+      }
+      .bank-grid {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .bank-card {
+        flex: 1;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        border-radius: 6px;
+        background: #fff;
+      }
+      .bank-name {
+        font-weight: 800;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 2px;
+      }
+      .bank-num {
+        font-family: monospace;
+        font-size: 13px;
+        color: #555;
+      }
+
+      /* Instruksi Konfirmasi */
+      .confirm-steps {
+        background: #f8f9fa;
+        border-left: 4px solid #1a1a1a;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #555;
+      }
+      .confirm-steps strong {
+        color: #000;
+      }
+
+      /* Footer Notes (Eksklusif & Halus) */
+      .footer-notes {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        text-align: center;
+      }
+      .footer-notes p {
+        font-size: 10px;
+        color: #aaa;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0;
+        font-weight: 400;
+      }
+      .footer-notes .company-sign {
+        font-size: 11px;
+        color: #333;
+        font-weight: 700;
+        margin-top: 5px;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        padding-bottom: 60px;
+        max-width: 750px;
+        margin: 0 auto;
+      }
+      .btn-action {
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+      }
+      .btn-download {
+        background: #333;
+        color: #fff;
+      }
+      .btn-download:hover {
+        background: #000;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-confirm {
+        background: #fff;
+        color: #333;
+        border: 2px solid #333;
+      }
+      .btn-confirm:hover {
+        background: #f4f4f4;
+        color: #000;
+        text-decoration: none;
+      }
+
+      /* Notifikasi Copy */
+      #copy-toast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 13px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Jeepin Jogja" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="oi oi-menu"></span> Menu</button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">BERANDA</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">TENTANG</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">LAYANAN</a></li>
+            <li class="nav-item"><a href="catalog.html" class="nav-link">KATALOG</a></li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KONTAK</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="contact.html">Hubungi Kami</a>
+                <a class="dropdown-item" href="confirmation.html">Konfirmasi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="invoice-wrapper">
+      <div class="invoice-container" id="printable-invoice">
+        <div class="invoice-header">
+          <div class="inv-logo">
+            <img src="images/logo.png" alt="Jeepin Jogja" />
+            <div class="inv-company-info">
+              <strong>Jeepin Jogja Adventure</strong><br />
+              Jl. Kaliurang KM 22, Sleman, Yogyakarta<br />
+              +62 812 3456 7890 | info@jeepin.com
+            </div>
+          </div>
+          <div class="inv-title">
+            <h1>INVOICE</h1>
+            <div class="inv-status">MENUNGGU PEMBAYARAN</div>
+            <div class="inv-date-time">Terbit: <span id="inv-full-date">-</span></div>
+          </div>
+        </div>
+
+        <div class="inv-info-grid">
+          <div class="inv-box">
+            <h5>DITAGIHKAN KEPADA</h5>
+            <p id="cust-name">Memuat Nama...</p>
+            <div class="sub-text">Customer Valued</div>
+          </div>
+          <div class="inv-box text-right">
+            <h5>ID BOOKING (PENTING)</h5>
+            <div class="id-highlight" id="booking-id-text">...</div>
+            <i class="ion-ios-copy btn-copy-icon" onclick="copyToClipboard()" title="Salin ID" data-html2canvas-ignore="true"></i>
+            <div class="sub-text mt-1" style="color: #d9534f">*Gunakan ID ini saat konfirmasi</div>
+          </div>
+        </div>
+
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th width="50%">DESKRIPSI PAKET</th>
+              <th width="25%">TANGGAL TRIP</th>
+              <th width="25%" class="text-right">TOTAL TAGIHAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="pkg-name" id="pkg-name">Paket Jeepin Adventure</div>
+                <div style="font-size: 12px; color: #666; margin-top: 3px">Kategori: <span id="pkg-cat">Adventure</span></div>
+              </td>
+              <td id="pkg-date">-</td>
+              <td class="text-right" id="pkg-price">-</td>
+            </tr>
+            <tr class="total-row">
+              <td colspan="2" class="text-right">TOTAL BAYAR</td>
+              <td class="text-right" style="color: #28a745" id="total-amount">Rp 0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="payment-box">
+          <h5 style="margin: 0 0 10px 0; font-size: 13px; font-weight: 700; color: #333; text-transform: uppercase">Metode Pembayaran (DP 50% / Lunas)</h5>
+          <p style="font-size: 13px; margin: 0; color: #555">Silakan transfer ke salah satu rekening resmi kami:</p>
+
+          <div class="bank-grid">
+            <div class="bank-card">
+              <span class="bank-name text-primary">BCA</span>
+              <span class="bank-num">123-456-7890</span>
+              <div style="font-size: 10px; margin-top: 3px">a.n Jeepin Jogja</div>
+            </div>
+            <div class="bank-card">
+              <span class="bank-name text-warning">MANDIRI</span>
+              <span class="bank-num">987-654-3210</span>
+              <div style="font-size: 10px; margin-top: 3px">a.n CV Petualang</div>
+            </div>
+            <div class="bank-card">
+              <span class="bank-name text-success">GOPAY/DANA</span>
+              <span class="bank-num">0812-3456-7890</span>
+              <div style="font-size: 10px; margin-top: 3px">Jeepin Official</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="confirm-steps">
+          <strong>Langkah Selanjutnya:</strong><br />
+          1. Lakukan pembayaran ke salah satu rekening di atas.<br />
+          2. Simpan/Screenshot bukti transfer Anda.<br />
+          3. Klik tombol <strong>"Konfirmasi"</strong> di bawah atau buka menu <strong>Kontak > Konfirmasi</strong>.<br />
+          4. Masukkan <strong>ID Booking</strong> dan upload bukti transfer Anda.
+        </div>
+
+        <div class="footer-notes">
+          <p>Dokumen ini diterbitkan secara otomatis oleh sistem komputer.</p>
+          <p>Terima kasih atas kepercayaan Anda memilih layanan kami.</p>
+          <div class="company-sign">© JEEPIN JOGJA OFFICIAL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button onclick="generatePDF()" class="btn-action btn-download"><i class="ion-ios-download"></i> Unduh PDF</button>
+      <a href="confirmation.html" class="btn-action btn-confirm"> <i class="ion-ios-checkmark-circle"></i> Konfirmasi </a>
+    </div>
+
+    <div id="copy-toast">ID Booking berhasil disalin!</div>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="Jeepin Jogja" class="footer-logo" />
+                </a>
+              </h2>
+              <p>Partner petualangan profesional di Yogyakarta. Memberikan pengalaman tak terlupakan dengan standar pelayanan terbaik.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Informasi</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">Tentang Kami</a></li>
+                <li><a href="services.html" class="py-2 d-block">Layanan</a></li>
+                <li><a href="catalog.html" class="py-2 d-block">Katalog</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kontak</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Bantuan</h2>
+              <ul class="list-unstyled">
+                <li><a href="guide.html" class="py-2 d-block">FAQ</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Cara Booking</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Metode Pembayaran</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kebijakan Privasi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Alamat</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Kaliurang, Sleman, Yogyakarta</span></li>
+                  <li>
+                    <a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 3456 7890</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon icon-envelope"></span><span class="text">info@jeepin.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Jeepin Jogja. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 1. POPULATE DATA
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const idBooking = urlParams.get("id") || "JPN-XXXX-000";
+        const nama = urlParams.get("name") || "Tamu";
+        const total = urlParams.get("total") || "0";
+        const tglTrip = urlParams.get("date") || "-";
+
+        // Buat Tanggal + Jam Terbit Invoice (Realtime)
+        const now = new Date();
+        const optionsDate = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        const optionsTime = { hour: "2-digit", minute: "2-digit" };
+
+        const tglStr = now.toLocaleDateString("id-ID", optionsDate);
+        const jamStr = now.toLocaleTimeString("id-ID", optionsTime);
+
+        $("#inv-full-date").text(`${tglStr}, ${jamStr} WIB`); // Isi header
+
+        $("#cust-name").text(nama);
+        $("#booking-id-text").text(idBooking);
+        $("#pkg-name").text("Paket Jeepin Adventure");
+        $("#pkg-date").text(tglTrip); // Tanggal Trip
+
+        const formattedTotal = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(total);
+        $("#pkg-price").text(formattedTotal);
+        $("#total-amount").text(formattedTotal);
+      });
+
+      // 2. FUNGSI COPY ID
+      function copyToClipboard() {
+        const idText = document.getElementById("booking-id-text").innerText;
+        navigator.clipboard.writeText(idText).then(() => {
+          const toast = document.getElementById("copy-toast");
+          toast.style.opacity = "1";
+          setTimeout(() => {
+            toast.style.opacity = "0";
+          }, 2000);
+        });
+      }
+
+      // 3. GENERATE PDF
+      function generatePDF() {
+        const btn = $(".btn-download");
+        const oldText = btn.html();
+        btn.html('<i class="spinner-border spinner-border-sm"></i> Membuat PDF...');
+        btn.prop("disabled", true);
+
+        const element = document.getElementById("printable-invoice");
+
+        const opt = {
+          margin: 0,
+          filename: "Invoice-Jeepin-" + $("#booking-id-text").text() + ".pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, scrollY: 0, useCORS: true },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        };
+
+        html2pdf()
+          .set(opt)
+          .from(element)
+          .save()
+          .then(function () {
+            btn.html(oldText);
+            btn.prop("disabled", false);
+          });
+      }
+    </script>
+  </body>
+</html>

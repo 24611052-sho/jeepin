@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Katalog Paket - Jeepin Jogja</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* --- GLOBAL STYLE & HEADER --- */
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+        --brand-font: "Poppins", sans-serif;
+      }
+      a {
+        color: var(--jeepin-black) !important;
+      }
+      .text-primary {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Navbar Styling */
+      .ftco-navbar-light .navbar-nav > .nav-item.active > a {
+        color: var(--jeepin-black) !important;
+        font-weight: 700;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+        color: var(--jeepin-white) !important;
+      }
+      .ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Dropdown Menu (Kontak) */
+      .dropdown-menu {
+        background-color: var(--jeepin-black) !important;
+        border: none;
+        border-radius: 0 0 4px 4px;
+        margin-top: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 13px;
+        padding: 10px 20px;
+        font-family: var(--brand-font) !important;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .dropdown-item:hover {
+        background-color: #333 !important;
+        color: #fff !important;
+      }
+
+      /* Typography */
+      .subheading {
+        font-family: var(--brand-font) !important;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--jeepin-black) !important;
+        font-size: 13px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--brand-font) !important;
+        color: var(--jeepin-black);
+      }
+
+      /* Buttons Standard */
+      .btn {
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background-color: var(--jeepin-black) !important;
+        border-color: var(--jeepin-black) !important;
+        color: #fff !important;
+      }
+      .btn-primary:hover {
+        background-color: #0f0f0f !important;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+      }
+      .btn-secondary {
+        background-color: #fff !important;
+        color: var(--jeepin-black) !important;
+        border: 1px solid #d0d0d0 !important;
+      }
+      .btn-secondary:hover {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+      }
+
+      /* Header Specifics */
+      .hero-wrap .breadcrumbs {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      .hero-wrap .breadcrumbs span a {
+        color: #fff !important;
+      }
+      .hero-wrap .breadcrumbs span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .hero-wrap h1 {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      /* Footer & Logo */
+      .navbar-brand img {
+        max-height: 60px;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+      }
+      .ftco-footer .logo img {
+        max-height: 60px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+      .ftco-footer {
+        background-color: #000 !important;
+        color: #d0d0d0 !important;
+      }
+      .ftco-footer h2 {
+        color: #fff !important;
+      }
+      .ftco-footer a {
+        color: #cfcfcf !important;
+      }
+
+      /* --- KATALOG STYLE INOVATIF --- */
+
+      /* 1. Modern Filter Tabs - Simplified */
+      .nav-pills {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        justify-content: center;
+      }
+      .nav-pills .nav-item {
+        margin: 0 5px;
+      }
+      .nav-pills .nav-link {
+        border-radius: 50px;
+        color: #888;
+        font-weight: 600;
+        font-size: 13px;
+        border: 1px solid transparent;
+        padding: 8px 24px;
+        background: #f9f9f9;
+        transition: all 0.3s ease;
+      }
+      .nav-pills .nav-link:hover {
+        background: #eee;
+        color: #333;
+      }
+      .nav-pills .nav-link.active {
+        color: #fff;
+        background-color: var(--jeepin-black);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* 2. Kartu Paket Premium */
+      .car-wrap {
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-bottom: 30px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .car-wrap:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .car-wrap .img {
+        height: 220px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      /* Badge Kategori */
+      .category-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: rgba(26, 26, 26, 0.9);
+        color: #fff;
+        padding: 4px 12px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
+      }
+
+      .car-wrap .text {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Judul */
+      .car-wrap h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+      .car-wrap h2 a {
+        color: #1a1a1a !important;
+        text-decoration: none;
+      }
+
+      /* Deskripsi Singkat */
+      .desc-text {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        min-height: 40px;
+      }
+
+      /* Info Bar (Durasi & Jam) */
+      .specs-grid {
+        display: flex;
+        background: #f8f9fa;
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-bottom: 15px;
+        font-size: 11px;
+        color: #555;
+        font-weight: 500;
+      }
+      .specs-item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .specs-item i {
+        color: var(--jeepin-black);
+        font-size: 14px;
+      }
+
+      /* Harga */
+      .price-section {
+        margin-top: auto;
+        margin-bottom: 15px;
+      }
+      .price-tag {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--jeepin-black);
+      }
+      .price-unit {
+        font-size: 12px;
+        font-weight: 400;
+        color: #888;
+        margin-left: 4px;
+      }
+
+      /* 3. Tombol Aksi (Kiri-Kanan) */
+      .action-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .action-buttons .btn {
+        flex: 1;
+        padding: 10px 0;
+      }
+      .action-buttons .btn-primary {
+        background: var(--jeepin-black);
+        border: none;
+        color: #fff;
+      }
+      .action-buttons .btn-secondary {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        color: #333;
+      }
+      .action-buttons .btn-secondary:hover {
+        background: #f5f5f5;
+      }
+
+      /* Animasi */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Jeepin Jogja" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="oi oi-menu"></span> Menu</button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">BERANDA</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">TENTANG</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">LAYANAN</a></li>
+            <li class="nav-item active"><a href="catalog.html" class="nav-link">KATALOG</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> KONTAK </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="contact.html">Hubungi Kami</a>
+                <a class="dropdown-item" href="confirmation.html">Konfirmasi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg.jpg')" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+            <p class="breadcrumbs">
+              <span class="mr-2"
+                ><a href="index.html">Beranda <i class="ion-ios-arrow-forward"></i></a
+              ></span>
+              <span>Katalog <i class="ion-ios-arrow-forward"></i></span>
+            </p>
+            <h1 class="mb-3 bread">Pilihan Paket Premium</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center">
+            <ul class="nav nav-pills justify-content-center" id="category-filters">
+              <li class="nav-item"><a class="nav-link active" data-filter="all" href="#">Semua</a></li>
+              <li class="nav-item"><a class="nav-link" data-filter="adventure" href="#">Adventure</a></li>
+              <li class="nav-item"><a class="nav-link" data-filter="trip" href="#">Trip & Wisata</a></li>
+              <li class="nav-item"><a class="nav-link" data-filter="prewed" href="#">Prewedding</a></li>
+              <li class="nav-item"><a class="nav-link" data-filter="transport" href="#">Transport</a></li>
+              <li class="nav-item"><a class="nav-link" data-filter="addon" href="#">Add-ons</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" id="catalog-grid">
+          <div class="col-12 text-center py-5">
+            <div class="spinner-border text-dark" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="Jeepin Jogja" class="footer-logo" />
+                </a>
+              </h2>
+              <p>Partner petualangan profesional di Yogyakarta. Memberikan pengalaman tak terlupakan dengan standar pelayanan terbaik.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Informasi</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">Tentang Kami</a></li>
+                <li><a href="services.html" class="py-2 d-block">Layanan</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Syarat & Ketentuan</a></li>
+                <li><a href="contact.html" class="py-2 d-block">Kontak</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Bantuan</h2>
+              <ul class="list-unstyled">
+                <li><a href="guide.html" class="py-2 d-block">FAQ</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Cara Booking</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Metode Pembayaran</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kebijakan Privasi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Alamat</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Kaliurang, Sleman, Yogyakarta</span></li>
+                  <li>
+                    <a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 3456 7890</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon icon-envelope"></span><span class="text">info@jeepin.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Jeepin Jogja. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1a1a1a" />
+      </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // 1. DATABASE LENGKAP (Sesuai File CSV Kendaraan Paket)
+      // Pengelompokan Kategori:
+      // - adventure: Jeep, ATV, Scooter
+      // - trip: Wisata, Study Tour, Group
+      // - prewed: Prewed
+      // - transport: Transport
+      // - addon: Guide, Foto
+      const packagesData = [
+        // ADVENTURE
+        { id: "JE01", group: "adventure", category: "Sewa Jeep", name: "Jeep Adventure (Driver)", desc: "Kapasitas 4 orang, Include BBM & Driver", price: 800000, durasi: "3 Jam", jam: "07:00-16:00", img: "images/car-1.jpg" },
+        { id: "JE02", group: "adventure", category: "Sewa Jeep", name: "Jeep Adventure (Lepas Kunci)", desc: "Syarat SIM A, Deposit 3jt", price: 650000, durasi: "24 Jam", jam: "24 Jam", img: "images/car-2.jpg" },
+        { id: "AT01", group: "adventure", category: "ATV", name: "ATV Quad Bike (Single)", desc: "1 Orang, Full Safety Gear", price: 350000, durasi: "1 Jam", jam: "08:00-17:00", img: "images/car-3.jpg" },
+        { id: "AT02", group: "adventure", category: "ATV", name: "ATV Quad Bike (Tandem)", desc: "2 Orang, Full Safety Gear", price: 500000, durasi: "1 Jam", jam: "08:00-17:00", img: "images/car-4.jpg" },
+        { id: "SK01", group: "adventure", category: "Scooter", name: "Electric Scooter", desc: "Minimal 2 jam, area resort", price: 100000, durasi: "2 Jam", jam: "08:00-17:00", img: "images/car-5.jpg" },
+
+        // TRIP & WISATA
+        { id: "PW01", group: "trip", category: "Wisata", name: "Sunrise Merapi Luxury", desc: "Private pickup, breakfast, museum", price: 1200000, durasi: "7 Jam", jam: "04:00 Start", img: "images/car-6.jpg" },
+        { id: "PW02", group: "trip", category: "Wisata", name: "Heritage Candi Series", desc: "Prambanan, Ratu Boko, Lunch", price: 1500000, durasi: "9 Jam", jam: "08:00 Start", img: "images/car-7.jpg" },
+        { id: "PW03", group: "trip", category: "Wisata", name: "South Coast Expedition", desc: "4 Pantai, Seafood, Sunset", price: 1800000, durasi: "10 Jam", jam: "09:00 Start", img: "images/car-8.jpg" },
+        { id: "PW04", group: "trip", category: "Wisata", name: "Ultimate Adventure Combo", desc: "Jeep + ATV + Lunch", price: 2200000, durasi: "9 Jam", jam: "07:00 Start", img: "images/car-9.jpg" },
+        { id: "ST01", group: "trip", category: "Study Tour", name: "Education Package 3D2N", desc: "Min 15 pax, Hotel, Makan", price: 2500000, durasi: "3 Hari", jam: "08:00 Start", img: "images/car-10.jpg" },
+        { id: "CG01", group: "trip", category: "Group", name: "Corporate Retreat", desc: "Team building, Min 10 pax", price: 2500000, durasi: "8 Jam", jam: "08:00 Start", img: "images/car-11.jpg" },
+
+        // PREWEDDING
+        { id: "PD01", group: "prewed", category: "Prewed", name: "Silver Package", desc: "5 jam, 2 spot, 80 foto", price: 3500000, durasi: "5 Jam", jam: "07:00-15:00", img: "images/car-12.jpg" },
+        { id: "PD02", group: "prewed", category: "Prewed", name: "Gold Package", desc: "8 jam, 3 spot, Video", price: 5500000, durasi: "8 Jam", jam: "06:00-14:00", img: "images/car-13.jpg" },
+        { id: "PD03", group: "prewed", category: "Prewed", name: "Platinum Package", desc: "12 jam, 4 spot + Drone", price: 8500000, durasi: "12 Jam", jam: "05:00-17:00", img: "images/car-14.jpg" },
+
+        // TRANSPORT
+        { id: "TR01", group: "transport", category: "Transport", name: "Premium Transfer (Airport)", desc: "Innova/Hiace, Max 6 orang", price: 250000, durasi: "2 Jam", jam: "24 Jam", img: "images/car-15.jpg" },
+        { id: "TR02", group: "transport", category: "Transport", name: "Intercity (Jogja-Semarang)", desc: "Drop off service 12 jam", price: 1500000, durasi: "12 Jam", jam: "06:00-20:00", img: "images/car-16.jpg" },
+
+        // ADD-ONS
+        { id: "GS01", group: "addon", category: "Guide", name: "Basic Guide (IDN)", desc: "8 Jam, Bahasa Indonesia", price: 500000, durasi: "8 Jam", jam: "07:00-17:00", img: "images/person_4.jpg" },
+        { id: "GS02", group: "addon", category: "Guide", name: "English Guide", desc: "8 Jam, English Speaking", price: 750000, durasi: "8 Jam", jam: "07:00-17:00", img: "images/person_5.jpg" },
+        { id: "GS03", group: "addon", category: "Guide", name: "Specialist Guide", desc: "Sejarah/Geologi", price: 1000000, durasi: "8 Jam", jam: "07:00-17:00", img: "images/person_6.jpg" },
+        { id: "FT01", group: "addon", category: "Foto", name: "Basic Shoot", desc: "3 Jam, 75 Edit", price: 600000, durasi: "3 Jam", jam: "06:00-16:00", img: "images/shoot_1.jpg" },
+        { id: "FT02", group: "addon", category: "Foto", name: "Premium Shoot", desc: "5 Jam, 150 Edit + Drone", price: 1200000, durasi: "5 Jam", jam: "06:00-16:00", img: "images/shoot_2.jpg" },
+      ];
+
+      // 2. HELPER FUNCTIONS
+      function formatRupiah(num) {
+        if (num >= 1000000) return num / 1000000 + "jt";
+        if (num >= 1000) return num / 1000 + "K";
+        return num;
+      }
+
+      // 3. MAIN LOGIC
+      $(document).ready(function () {
+        // Render Awal (Semua Paket)
+        renderCatalog("all");
+
+        // Event Listener Filter
+        $(".nav-pills .nav-link").click(function (e) {
+          e.preventDefault();
+          $(".nav-pills .nav-link").removeClass("active");
+          $(this).addClass("active");
+
+          const filter = $(this).data("filter");
+          renderCatalog(filter);
+        });
+      });
+
+      // 4. RENDER FUNCTION
+      function renderCatalog(filter) {
+        const grid = $("#catalog-grid");
+        grid.empty(); // Bersihkan isi lama
+
+        // Filter berdasarkan GROUP (bukan kategori detail) agar lebih simpel
+        const filteredData = filter === "all" ? packagesData : packagesData.filter((p) => p.group === filter);
+
+        if (filteredData.length === 0) {
+          grid.html('<div class="col-12 text-center py-5"><p class="text-muted">Tidak ada paket ditemukan di kategori ini.</p></div>');
+          return;
+        }
+
+        filteredData.forEach((p) => {
+          const html = `
+            <div class="col-md-4 d-flex align-items-stretch fade-in">
+              <div class="car-wrap rounded w-100">
+                <div class="img rounded d-flex align-items-end" style="background-image: url(${p.img});">
+                  <span class="category-badge">${p.category}</span>
+                </div>
+                <div class="text">
+                  <h2 class="mb-0"><a href="detail.html?id=${p.id}">${p.name}</a></h2>
+                  <p class="desc-text">${p.desc}</p>
+                  
+                  <div class="specs-grid">
+                    <div class="specs-item"><i class="ion-ios-time"></i> ${p.durasi}</div>
+                    <div class="specs-item"><i class="ion-ios-alarm"></i> ${p.jam}</div>
+                  </div>
+
+                  <div class="price-section">
+                    <span class="price-tag">IDR ${formatRupiah(p.price)}</span>
+                    <span class="price-unit">/paket</span>
+                  </div>
+
+                  <div class="action-buttons">
+                    <a href="booking.html?id=${p.id}" class="btn btn-primary">Booking</a>
+                    <a href="detail.html?id=${p.id}" class="btn btn-secondary">Detail</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          grid.append(html);
+        });
+      }
+    </script>
+  </body>
+</html>

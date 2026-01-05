@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Tentang Kami - Jeepin Jogja</title>
+    <link rel="icon" href="images/logo icon.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/ionicons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* 1. GLOBAL STYLE & HEADER */
+      :root {
+        --jeepin-black: #1a1a1a;
+        --jeepin-white: #ffffff;
+        --brand-font: "Poppins", sans-serif;
+      }
+
+      /* Override Link & Teks Utama */
+      a {
+        color: var(--jeepin-black) !important;
+      }
+      .text-primary {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* Navbar Styling */
+      .ftco-navbar-light .navbar-nav > .nav-item.active > a {
+        color: var(--jeepin-black) !important;
+        font-weight: 700;
+      }
+      .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+        color: var(--jeepin-white) !important;
+      }
+      .ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+        color: var(--jeepin-black) !important;
+      }
+
+      /* --- CSS BARU UNTUK DROPDOWN MENU --- */
+      .dropdown-menu {
+        background-color: var(--jeepin-black) !important;
+        border: none;
+        border-radius: 0 0 4px 4px;
+        margin-top: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      .dropdown-item {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 13px;
+        padding: 10px 20px;
+        font-family: var(--brand-font) !important;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .dropdown-item:hover {
+        background-color: #333 !important;
+        color: #fff !important;
+      }
+
+      /* Footer */
+      .ftco-footer {
+        background-color: #000 !important;
+      }
+      .ftco-footer .ftco-footer-widget h2 {
+        color: #fff !important;
+      }
+      .ftco-footer,
+      .ftco-footer a,
+      .ftco-footer p {
+        color: #d0d0d0 !important;
+      }
+      .ftco-footer a:hover {
+        color: #ffffff !important;
+      }
+
+      /* Logo Image Style */
+      .navbar-brand img {
+        max-height: 60px;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+      }
+      .footer-logo {
+        max-height: 60px;
+        margin-bottom: 10px;
+      }
+      .about-brand {
+        max-height: 72px;
+        width: auto;
+        display: block;
+        margin: 0;
+      }
+      @media (max-width: 576px) {
+        .about-brand {
+          max-height: 56px;
+        }
+      }
+
+      /* Typography Override */
+      .subheading {
+        font-family: var(--brand-font) !important;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--jeepin-black) !important;
+        font-size: 13px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--brand-font) !important;
+        color: var(--jeepin-black);
+      }
+
+      /* Specific Fixes for About Page */
+      .hero-wrap .breadcrumbs {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      .hero-wrap .breadcrumbs span a {
+        color: #fff !important;
+      }
+      .hero-wrap .breadcrumbs span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .hero-wrap h1 {
+        color: #fff;
+        font-weight: 700;
+      }
+
+      /* About Image Overlay text fix */
+      .heading-section-white h2 {
+        color: var(--jeepin-black) !important;
+      }
+      .ftco-intro .heading-section-white h2 {
+        color: #fff !important;
+      }
+
+      /* Tombol */
+      .btn {
+        border-radius: 6px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+      .btn-primary {
+        background-color: var(--jeepin-black) !important;
+        border-color: var(--jeepin-black) !important;
+        color: #fff !important;
+        padding: 0.7rem 1.25rem !important;
+        box-shadow: 0 4px 10px rgba(26, 26, 26, 0.06);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        background-color: #0f0f0f !important;
+        box-shadow: 0 10px 22px rgba(26, 26, 26, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="Jeepin Jogja" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="oi oi-menu"></span> Menu</button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="index.html" class="nav-link">BERANDA</a></li>
+            <li class="nav-item active"><a href="about.html" class="nav-link">TENTANG</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">LAYANAN</a></li>
+            <li class="nav-item"><a href="catalog.html" class="nav-link">KATALOG</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> KONTAK </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="contact.html">Hubungi Kami</a>
+                <a class="dropdown-item" href="confirmation.html">Konfirmasi</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg.jpg')" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+            <p class="breadcrumbs">
+              <span class="mr-2"
+                ><a href="index.html">Beranda <i class="ion-ios-arrow-forward"></i></a
+              ></span>
+              <span>Tentang <i class="ion-ios-arrow-forward"></i></span>
+            </p>
+            <h1 class="mb-3 bread">Tentang Kami</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-about">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg)"></div>
+          <div class="col-md-6 wrap-about ftco-animate">
+            <div class="heading-section heading-section-white pl-md-5">
+              <span class="subheading">Cerita Kami</span>
+              <h2 class="mb-4"><img src="images/logo.png" alt="Jeepin Jogja" class="about-brand" /></h2>
+
+              <p>Jeepin Jogja lahir dari kecintaan kami terhadap alam Yogyakarta dan adrenalin dunia offroad. Kami memahami bahwa petualangan terbaik adalah kombinasi antara tantangan medan yang seru dan kenyamanan pelayanan yang prima.</p>
+              <p>
+                Berbeda dengan penyedia layanan biasa, kami mengkurasi setiap rute perjalanan. Mulai dari jalur lahar Merapi yang ikonik hingga hutan pinus tersembunyi yang jarang tersentuh wisatawan. Armada kami dirawat secara detail untuk
+                memastikan keamanan Anda, dan driver kami dilatih tidak hanya untuk mengemudi, tetapi juga menjadi pemandu dan fotografer handal bagi momen liburan Anda.
+              </p>
+              <p><a href="catalog.html" class="btn btn-primary py-3 px-4">Lihat Armada Kami</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-intro" style="background-image: url(images/about2.jpg)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-md-6 heading-section heading-section-white ftco-animate">
+            <h2 class="mb-3">Tertarik Menjadi Mitra?</h2>
+            <p>Kami membuka kesempatan kerjasama untuk pemilik Jeep dan ATV yang memenuhi standar kualitas dan keamanan Jeepin Jogja.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Testimonial</span>
+            <h2 class="mb-3">Kata Mereka</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"Pengalaman luar biasa! Jeepnya bersih dan drivernya sangat ramah serta jago foto."</p>
+                    <p class="name">Sarah Wijaya</p>
+                    <span class="position">Traveler Jakarta</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_2.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"ATV track-nya seru banget. Safety gear lengkap dan bersih. Recommended!"</p>
+                    <p class="name">Budi Santoso</p>
+                    <span class="position">Mahasiswa</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_3.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"Bookingnya gampang, admin fast respon. Trip sunrise-nya magis banget."</p>
+                    <p class="name">Amanda R.</p>
+                    <span class="position">Fotografer</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                  <div class="user-img mb-2" style="background-image: url(images/person_1.jpg)"></div>
+                  <div class="text pt-4">
+                    <p class="mb-4">"Service memuaskan, rute private-nya benar-benar sepi dan syahdu. Wajib coba."</p>
+                    <p class="name">Rizky Pratama</p>
+                    <span class="position">Travel Blogger</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-counter ftco-section img" id="section-counter">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="5">0</strong>
+                <span>Tahun <br />Pengalaman</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="50">0</strong>
+                <span>Unit <br />Kendaraan</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text text-border d-flex align-items-center">
+                <strong class="number" data-number="2500">0</strong>
+                <span>Pelanggan <br />Puas</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text d-flex align-items-center">
+                <strong class="number" data-number="3">0</strong>
+                <span>Lokasi <br />Basecamp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">
+                <a href="index.html" class="logo">
+                  <img src="images/logo.png" alt="Jeepin Jogja" class="footer-logo" />
+                </a>
+              </h2>
+              <p>Partner petualangan profesional di Yogyakarta. Memberikan pengalaman tak terlupakan dengan standar pelayanan terbaik.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Informasi</h2>
+              <ul class="list-unstyled">
+                <li><a href="about.html" class="py-2 d-block">Tentang Kami</a></li>
+                <li><a href="services.html" class="py-2 d-block">Layanan</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Syarat & Ketentuan</a></li>
+                <li><a href="contact.html" class="py-2 d-block">Kontak</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Bantuan</h2>
+              <ul class="list-unstyled">
+                <li><a href="guide.html" class="py-2 d-block">FAQ</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Cara Booking</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Metode Pembayaran</a></li>
+                <li><a href="guide.html" class="py-2 d-block">Kebijakan Privasi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Alamat</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Kaliurang, Sleman, Yogyakarta</span></li>
+                  <li>
+                    <a href="#"><span class="icon icon-phone"></span><span class="text">+62 812 3456 7890</span></a>
+                  </li>
+                  <li>
+                    <a href="#"><span class="icon icon-envelope"></span><span class="text">info@jeepin.com</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Jeepin Jogja. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1a1a1a" />
+      </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
