@@ -617,7 +617,7 @@
     if (tglTrip !== "-") {
       const parts = tglTrip.split("-"); // Memisahkan tahun, bulan, tanggal
       if (parts.length === 3) {
-        const year = parts[0].slice(-2); // Ambil 2 digit tahun terakhir
+        const year = parts[0]; // Ambil 2 digit tahun terakhir
         const month = parts[1];
         const day = parts[2];
         tglTrip = `${day}/${month}/${year}`; // Susun ulang
@@ -685,4 +685,5 @@
 </script>
   </body>
 </html>
+
 
