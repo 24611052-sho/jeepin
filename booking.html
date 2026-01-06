@@ -656,20 +656,19 @@
           body: JSON.stringify(data),
         })
           .then((response) => response.json())
-          .then((result) => {
-            if (result.status === "SUKSES") {
-              const idBooking = result.data.id_booking;
-              const nama = $("#namaPelanggan").val();
-              const total = $("#summaryTotal")
-                .text()
-                .replace(/[^0-9]/g, "");
-
-              window.location.href = `invoice.html?id=${idBooking}&name=${encodeURIComponent(nama)}&total=${total}`;
-            } else {
-              alert("GAGAL: " + result.pesan);
-              btn.html(originalText).prop("disabled", false);
-            }
-          })
+.then((result) => {
+  if (result.status === "SUKSES") {
+    const idBooking = result.data.id_booking;
+    const nama = $("#namaPelanggan").val();
+    const total = $("#summaryTotal").text().replace(/[^0-9]/g, "");
+    const tglTrip = $("#tanggalGuna").val(); 
+    
+    window.location.href = `invoice.html?id=${idBooking}&name=${encodeURIComponent(nama)}&total=${total}&date=${tglTrip}`;
+  } else {
+    alert("GAGAL: " + result.pesan);
+    btn.html(originalText).prop("disabled", false);
+  }
+})
           .catch((err) => {
             alert("Terjadi kesalahan koneksi. Coba lagi.");
             console.error(err);
@@ -679,3 +678,4 @@
     </script>
   </body>
 </html>
+
