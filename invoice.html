@@ -601,74 +601,88 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    <script>
-      $(document).ready(function () {
-        // 1. POPULATE DATA
-        const urlParams = new URLSearchParams(window.location.search);
+   <script>
+  $(document).ready(function () {
+    // 1. POPULATE DATA
+    const urlParams = new URLSearchParams(window.location.search);
 
-        const idBooking = urlParams.get("id") || "JPN-XXXX-000";
-        const nama = urlParams.get("name") || "Tamu";
-        const total = urlParams.get("total") || "0";
-        const tglTrip = urlParams.get("date") || "-";
+    const idBooking = urlParams.get("id") || "JPN-XXXX-000";
+    const nama = urlParams.get("name") || "Tamu";
+    const total = urlParams.get("total") || "0";
+    
+    // REVISI
+    let tglTrip = urlParams.get("date") || "-";
 
-        // Buat Tanggal + Jam Terbit Invoice (Realtime)
-        const now = new Date();
-        const optionsDate = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-        const optionsTime = { hour: "2-digit", minute: "2-digit" };
+    // REVISI: Logika format tanggal (YYYY-MM-DD menjadi dd/mm/yy)
+    if (tglTrip !== "-") {
+      const parts = tglTrip.split("-"); // Memisahkan tahun, bulan, tanggal
+      if (parts.length === 3) {
+        const year = parts[0].slice(-2); // Ambil 2 digit tahun terakhir
+        const month = parts[1];
+        const day = parts[2];
+        tglTrip = `${day}/${month}/${year}`; // Susun ulang
+      }
+    }
 
-        const tglStr = now.toLocaleDateString("id-ID", optionsDate);
-        const jamStr = now.toLocaleTimeString("id-ID", optionsTime);
+    // Buat Tanggal + Jam Terbit Invoice (Realtime)
+    const now = new Date();
+    const optionsDate = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+    const optionsTime = { hour: "2-digit", minute: "2-digit" };
 
-        $("#inv-full-date").text(`${tglStr}, ${jamStr} WIB`); // Isi header
+    const tglStr = now.toLocaleDateString("id-ID", optionsDate);
+    const jamStr = now.toLocaleTimeString("id-ID", optionsTime);
 
-        $("#cust-name").text(nama);
-        $("#booking-id-text").text(idBooking);
-        $("#pkg-name").text("Paket Jeepin Adventure");
-        $("#pkg-date").text(tglTrip); // Tanggal Trip
+    $("#inv-full-date").text(`${tglStr}, ${jamStr} WIB`); // Isi header
 
-        const formattedTotal = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(total);
-        $("#pkg-price").text(formattedTotal);
-        $("#total-amount").text(formattedTotal);
+    $("#cust-name").text(nama);
+    $("#booking-id-text").text(idBooking);
+    $("#pkg-name").text("Paket Jeepin Adventure");
+    $("#pkg-date").text(tglTrip); // Tanggal Trip
+
+    const formattedTotal = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(total);
+    $("#pkg-price").text(formattedTotal);
+    $("#total-amount").text(formattedTotal);
+  });
+
+  // 2. FUNGSI COPY ID
+  function copyToClipboard() {
+    const idText = document.getElementById("booking-id-text").innerText;
+    navigator.clipboard.writeText(idText).then(() => {
+      const toast = document.getElementById("copy-toast");
+      toast.style.opacity = "1";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+      }, 2000);
+    });
+  }
+
+  // 3. GENERATE PDF
+  function generatePDF() {
+    const btn = $(".btn-download");
+    const oldText = btn.html();
+    btn.html('<i class="spinner-border spinner-border-sm"></i> Membuat PDF...');
+    btn.prop("disabled", true);
+
+    const element = document.getElementById("printable-invoice");
+
+    const opt = {
+      margin: 0,
+      filename: "Invoice-Jeepin-" + $("#booking-id-text").text() + ".pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, scrollY: 0, useCORS: true },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    };
+
+    html2pdf()
+      .set(opt)
+      .from(element)
+      .save()
+      .then(function () {
+        btn.html(oldText);
+        btn.prop("disabled", false);
       });
-
-      // 2. FUNGSI COPY ID
-      function copyToClipboard() {
-        const idText = document.getElementById("booking-id-text").innerText;
-        navigator.clipboard.writeText(idText).then(() => {
-          const toast = document.getElementById("copy-toast");
-          toast.style.opacity = "1";
-          setTimeout(() => {
-            toast.style.opacity = "0";
-          }, 2000);
-        });
-      }
-
-      // 3. GENERATE PDF
-      function generatePDF() {
-        const btn = $(".btn-download");
-        const oldText = btn.html();
-        btn.html('<i class="spinner-border spinner-border-sm"></i> Membuat PDF...');
-        btn.prop("disabled", true);
-
-        const element = document.getElementById("printable-invoice");
-
-        const opt = {
-          margin: 0,
-          filename: "Invoice-Jeepin-" + $("#booking-id-text").text() + ".pdf",
-          image: { type: "jpeg", quality: 0.98 },
-          html2canvas: { scale: 2, scrollY: 0, useCORS: true },
-          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-        };
-
-        html2pdf()
-          .set(opt)
-          .from(element)
-          .save()
-          .then(function () {
-            btn.html(oldText);
-            btn.prop("disabled", false);
-          });
-      }
-    </script>
+  }
+</script>
   </body>
 </html>
+
